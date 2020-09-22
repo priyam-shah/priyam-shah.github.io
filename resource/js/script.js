@@ -162,7 +162,22 @@ $('a[href*="#"]')
 
     });
     
+
     
 });
 
+//   ------------- canvas --------------
+    function upload(){
+ 
+  var canvas = document.getElementById ("can");
+  
+  var getimg = document.getElementById ("img");
+  
+  var image = new SimpleImage (getimg);
+  
+  image.drawTo(canvas);
+ }
 
+
+
+    
