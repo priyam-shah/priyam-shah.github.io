@@ -1,26 +1,4 @@
-:root {
-  --alabaster: #FAFAFA;
-  --frangipani: #FFDCB5;
-  --frostee: #EAF7EB;
-  --lemon-chiffon: #F9EEAB;
-  --sundown: #FFB7BC;
-  --white: #FFF;
-}
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--alabaster);
-  min-height: 100vh;
-  width: 100%;
-}
 
 .card-container {
   display: grid;
@@ -43,11 +21,11 @@ body {
   width: 100%;
 }
 
-/* -------- hit-the-floor ------*/
+/* -------- loading-text ------*/
 
-.hit-the-floor {
+.loading-text {
   color: #fff;
-  font-size: 12em;
+  font-size: 7em;
   font-weight: bold;
   font-family: Helvetica;
   text-shadow: 
@@ -65,15 +43,97 @@ body {
     0 20px 20px rgba(0,0,0,.15);
 }
 
-.hit-the-floor {
+.loading-text {
   text-align: center;
 }
 
+
+/*loading */
+
+.loading, .loading:before, .loading:after {
+  
+  display: inline-block;
+  width: 15px;
+  height: 40px;
+  line-height: 80px;
+  transform-origin: 8px 0px;
+  color: teal;
+  font-size: 40px;
+  font-family: "Times New Roman";
+  position: absolute;
+  z-index: 100000;
+  content: '•';
+}
+.loading:before, .loading:after {
+  opacity: 0;
+  text-shadow: 12px -2px 0px teal, -12px -2px 0px teal;
+  transform: rotateZ(0deg);
+  animation: loading 4s cubic-bezier(.15,.65,.85,.35) infinite, loading-shadow 2s cubic-bezier(.25,.75,.35,1) infinite alternate, loading-opacity 1s infinite;
+}
+.loading:after {
+  animation-delay: 1.35s;
+}
+@keyframes loading {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes loading-shadow {
+  from {
+    text-shadow: 35px -15px 0px teal, -35px -15px 0px teal;
+  }
+}
+@keyframes loading-opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/***********************************************************************************************************/
+/*unwanted code*/
+
+
+/*
+:root {
+  --alabaster: #FAFAFA;
+  --frangipani: #FFDCB5;
+  --frostee: #EAF7EB;
+  --lemon-chiffon: #F9EEAB;
+  --sundown: #FFB7BC;
+  --white: #FFF;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+*/
+
+/*
+body {
+  background-color: var(--alabaster);
+  min-height: 100vh;
+  width: 100%;
+}
+*/
+
+
+/*
 body {
   background-color: #f1f1f1;
 }
+*/
 
 /* Counter */
+/*
 .counter {
   animation: counter 5s linear infinite alternate;
   background-color: var(--sundown);
@@ -87,7 +147,9 @@ body {
   line-height: 1.1;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
+*/
 
+/*
 @keyframes counter {
   0% {
     counter-increment: count 0;
@@ -123,4 +185,5 @@ body {
     counter-increment: count 10;
   }
 }
+*/
 /* End counter */
